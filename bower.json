@@ -1,0 +1,19 @@
+{
+    "name": "codemirror-buttons",
+    "version": "1.0.0",
+    "homepage": "https://github.com/samdark/codemirror-buttons",
+    "authors": [
+        "Alexander Makarov <sam@rmcreative.ru>"
+    ],
+    "description": "CodeMirror buttons",
+    "main": "buttons.js",
+    "keywords": [
+        "codemirror",
+        "buttons",
+		"ui"
+    ],
+    "license": "BSD",
+    "dependencies": {
+        "CodeMirror": "*"
+    }
+}
