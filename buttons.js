@@ -32,7 +32,8 @@
     function createButton(cm, config) {
         var buttonNode = document.createElement('button');
         buttonNode.innerHTML = config.label;
-        buttonNode.addEventListener('click', function () {
+        buttonNode.addEventListener('click', function (e) {
+            e.preventDefault();
             config.callback(cm);
             cm.focus();
         });
