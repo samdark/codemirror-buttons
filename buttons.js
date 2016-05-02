@@ -32,6 +32,8 @@
     function createButton(cm, config) {
         var buttonNode = document.createElement('button');
         buttonNode.innerHTML = config.label;
+        buttonNode.setAttribute('type', 'button');
+        buttonNode.setAttribute('tabindex', '-1');
         buttonNode.addEventListener('click', function (e) {
             e.preventDefault();
             config.callback(cm);
