@@ -30,22 +30,33 @@
     });
 
     function createButton(cm, config) {
-        var buttonNode = document.createElement('button');
-        buttonNode.innerHTML = config.label;
-        buttonNode.setAttribute('type', 'button');
-        buttonNode.setAttribute('tabindex', '-1');
-        buttonNode.addEventListener('click', function (e) {
-            e.preventDefault();
-            cm.focus();
-            config.callback(cm);
-        });
+        var buttonNode;
 
-        if (config.class) {
-            buttonNode.className = config.class;
-        }
+        if (config.el) {
+            if (typeof config.el === 'function') {
+                buttonNode = config.el(cm);
+            } else {
+                buttonNode = config.el;
+            }
+        } else {
+            buttonNode = document.createElement('button');
+            buttonNode.innerHTML = config.label;
+            buttonNode.setAttribute('type', 'button');
+            buttonNode.setAttribute('tabindex', '-1');
 
-        if (config.title) {
-            buttonNode.setAttribute('title', config.title);
+            buttonNode.addEventListener('click', function (e) {
+                e.preventDefault();
+                cm.focus();
+                config.callback(cm);
+            });
+
+            if (config.class) {
+                buttonNode.className = config.class;
+            }
+
+            if (config.title) {
+                buttonNode.setAttribute('title', config.title);
+            }
         }
 
         if (config.hotkey) {

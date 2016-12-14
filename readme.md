@@ -133,6 +133,17 @@ var editor = CodeMirror.fromTextArea(document.getElementById('text'), {
 });
 ```
 
+Altrnatively, instead of setting individual options, you can supply either DOM node or a callback returning DOM node
+using `el` key:
+
+```javascript
+{
+    el: function(cm) {
+        return document.getElementById('mybutton');
+    }
+}
+```
+
 Optionally use stylesheet included to make buttons look a bit better:
 
 ```html
