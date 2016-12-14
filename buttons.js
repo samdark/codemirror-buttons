@@ -36,8 +36,8 @@
         buttonNode.setAttribute('tabindex', '-1');
         buttonNode.addEventListener('click', function (e) {
             e.preventDefault();
-            config.callback(cm);
             cm.focus();
+            config.callback(cm);
         });
 
         if (config.class) {
