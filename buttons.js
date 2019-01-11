@@ -62,7 +62,7 @@
         if (config.hotkey) {
             var map = {};
             map[config.hotkey] = config.callback;
-            cm.addKeyMap(map);
+            cm.addKeyMap(CodeMirror.normalizeKeyMap(map));
         }
 
         return buttonNode;
